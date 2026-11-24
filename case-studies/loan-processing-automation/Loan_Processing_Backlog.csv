@@ -1,0 +1,109 @@
+﻿Summary,Issue Type,Description,Priority,Labels,Labels,Status
+US-1 Compute a loan schedule,Task,"As a loan processor, I want the schedule and interest computed from the loan inputs so that I do not retype amounts.
+
+Acceptance criteria:
+Given a loan with a valid principal, rate and term
+When I enter the inputs
+Then the schedule is produced and the total interest equals the independently calculated figure for the same inputs.
+
+Requirement: FR-1 / BR-1
+Epic: Calculation
+Note: retrospective reconstruction, not written before development.",High,calculation,retrospective,To Do
+US-2 Apply the insurer's LPPI rate,Task,"As a loan processor, I want the LPPI charge calculated from the insurer's rate structure so that the insurance amount is correct.
+
+Acceptance criteria:
+Given a borrower whose age and term fall in a defined rate band
+When the LPPI is calculated
+Then the amount matches the insurer's rate table for that band.
+
+Given a borrower whose age or term falls outside the insurer's table
+When the LPPI is calculated
+Then the insurance is left blank and no insurance amount is added to the calculation.
+
+Requirement: FR-2 / BR-1
+Epic: Calculation
+Note: retrospective reconstruction, not written before development.",High,calculation,retrospective,To Do
+US-3 One-action printing,Task,"As a loan processor, I want to print all documents for a loan with one action so that I do not click through many steps.
+
+Acceptance criteria:
+Given a completed loan record
+When I run the print action
+Then every required document is produced for that loan, each populated with that loan's data.
+
+Given a missing required field
+When I run the print action
+Then no document is printed and the missing field is named.
+
+Requirement: FR-3 / BR-2, BR-4
+Epic: Documents and printing
+Note: retrospective reconstruction, not written before development.",High,documents-printing,retrospective,To Do
+US-4 Preserve the cashier's format,Task,"As a cashier, I want the disclosure document to match my existing paper format so that it fits my workflow.
+
+Acceptance criteria:
+Given the approved paper format
+When a disclosure is generated
+Then the fields, order and layout match the format, as confirmed by the cashier before release.
+
+Requirement: BR-4
+Epic: Documents and printing
+Note: retrospective reconstruction, not written before development.",High,documents-printing,retrospective,To Do
+US-5 Record a loan against its voucher number,Task,"As a loan processor, I want each loan's total amount recorded with its assigned voucher number so that it can be matched with the payment records and the scheduled payments.
+
+Acceptance criteria:
+Given a completed loan with an assigned voucher number
+When I record the loan
+Then the total loan amount is stored against the voucher number, and that voucher number can be used to match it with the payment records and the payment schedule.
+
+Requirement: FR-4 / BR-3
+Epic: Records and reporting
+Note: retrospective reconstruction, not written before development.",High,records-reporting,retrospective,To Do
+US-6 Ledger report,Task,"As a Finance officer, I want a ledger report so that I can reconcile loan activity.
+
+Acceptance criteria:
+Given loans recorded for a period (each with its voucher number and amount)
+When I run the report
+Then the totals equal the sum of the recorded entries for that period.
+
+Requirement: FR-5 / BR-3
+Epic: Records and reporting
+Note: retrospective reconstruction, not written before development.",Medium,records-reporting,retrospective,To Do
+US-7 Input validation,Task,"As a loan processor, I want clear messages for invalid inputs so that I can correct them before printing.
+
+Acceptance criteria:
+Given a negative amount, a blank required field or a non-numeric entry
+When I run the calculation
+Then the tool shows which input is invalid and produces no schedule.
+
+Requirement: FR-6 / BR-1, BR-5
+Epic: Calculation
+Note: retrospective reconstruction, not written before development.",Medium,calculation,retrospective,To Do
+US-8 Training and handover,Task,"As a department user, I want documentation and training so that I can use the tool without IT help.
+
+Acceptance criteria:
+Given a new user who has not seen the tool
+When they follow the written guide
+Then they can complete a loan from input to printed documents without help.
+
+Requirement: BR-5
+Epic: Adoption
+Note: retrospective reconstruction, not written before development.",Medium,adoption,retrospective,To Do
+US-9 Store the day's transactions,Task,"As a bookkeeper, I want each day's loan transactions stored in one place so that I can reconcile without searching paper records.
+
+Acceptance criteria:
+Given the loan transactions processed during a day
+When the day's data is stored
+Then every transaction appears in the stored record with its date and amount, and the day's total equals the sum of the individual transactions.
+
+Requirement: FR-7 / BR-3
+Epic: Records and reporting
+Note: retrospective reconstruction, not written before development.",Medium,records-reporting,retrospective,To Do
+US-10 Generate figures automatically,Task,"As a manager, I want the figures generated automatically so that I can review loan activity without asking for manual tallies.
+
+Acceptance criteria:
+Given stored transactions for a period
+When the figures are generated
+Then they match a manual recount of the same period.
+
+Requirement: FR-8 / BR-2, BR-3
+Epic: Records and reporting
+Note: retrospective reconstruction, not written before development.",Medium,records-reporting,retrospective,To Do
